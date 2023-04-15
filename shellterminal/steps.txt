@@ -1,0 +1,14 @@
+#PARSING DATA
+1.  create variables to hold input string without delimters
+        say char *inputptr;
+2.  create a variable to hold the delimters
+        const char *delim = '\n'
+3.  dynamically allocate memory to inputptr
+4.  make a copy of input string to store in inputptr\
+5.  split the string stored in inputptr into an array hence:
+            a. calc the total number of tokens expected.
+            b. using the number of tokens from above allocate the required memory
+               to hold array of all the string as the argv
+            c. store the tokens properly in the array.
+
+
