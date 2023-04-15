@@ -15,7 +15,7 @@ int main(int var, char **argv)
     /*print prompt*/
     prompt = "devluanga: ~$";
 
-    (void)var; (void)argv;
+    (void)var;
 
     while (1)
     {
