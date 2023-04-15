@@ -24,6 +24,14 @@ int main(int var, char **argv)
 
         input_ = getline(&lineptr, &n, stdin);
 
+        /*check if EOF or getline failed*/
+        if (input_ == -1)
+        {
+            printf("quit..\n");
+            exit(EXIT_FAILURE);
+            return (-1);
+        }
+
         /*dynamic memory allocation*/
         lineptr2 = malloc(sizeof(char)*input_);
         if (lineptr2 == NULL)
@@ -60,16 +68,21 @@ int main(int var, char **argv)
         }
         argv[x] =NULL;               
 
-        /*check if EOF or getline failed*/
-        if (input_ == -1)
+        /*test on our array*/
+
+        for (int i = 0; i < tokenval-1; i++)
         {
-            printf("quit..\n");
-            exit(EXIT_FAILURE);
-            return (-1);
+            printf("%s ", argv[x]);
+            return (0);
         }
         
+                
         printf("%s\n", lineptr);
         free(lineptr);
+
+
+        free(lineptr2);
+        free(argv);
     }
     return (0);
 }
