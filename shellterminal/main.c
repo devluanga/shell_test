@@ -4,12 +4,6 @@
 
 int main(int var, char **argv)
 {
-<<<<<<< HEAD
-    
-    char *prompt, *lineptr;
-    ssize_t input_;
-    size_t n = 0;
-=======
     /*lineptr & lineptr2 will hold user input*/
     char *prompt, *lineptr;
     char *lineptr2, *token_t; /*holds a copy of input without delimeters*/
@@ -17,12 +11,11 @@ int main(int var, char **argv)
     size_t n = 0;
     const char *delim = '\n';
     int x, tokenval;
->>>>>>> 9470fdd0c5d428c06c58ddab7a7082a5194d5508
 
     /*print prompt*/
     prompt = "devluanga: ~$";
 
-    (void)var; (void)argv;
+    (void)var;
 
     while (1)
     {
@@ -31,13 +24,14 @@ int main(int var, char **argv)
 
         input_ = getline(&lineptr, &n, stdin);
 
-<<<<<<< HEAD
+        /*check if EOF or getline failed*/
         if (input_ == -1)
         {
-            printf(" exit..\n");
-            /*exit(EXIT_FAILURE);*/
-	    return (-1);
-=======
+            printf("quit..\n");
+            exit(EXIT_FAILURE);
+            return (-1);
+        }
+
         /*dynamic memory allocation*/
         lineptr2 = malloc(sizeof(char)*input_);
         if (lineptr2 == NULL)
@@ -74,21 +68,21 @@ int main(int var, char **argv)
         }
         argv[x] =NULL;               
 
-        /*check if EOF or getline failed*/
-        if (input_ == -1)
+        /*test on our array*/
+
+        for (int i = 0; i < tokenval-1; i++)
         {
-            printf("quit..\n");
-            exit(EXIT_FAILURE);
-            return (-1);
->>>>>>> 9470fdd0c5d428c06c58ddab7a7082a5194d5508
+            printf("%s ", argv[x]);
+            return (0);
         }
         
+                
         printf("%s\n", lineptr);
         free(lineptr);
+
+
+        free(lineptr2);
+        free(argv);
     }
     return (0);
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9470fdd0c5d428c06c58ddab7a7082a5194d5508
