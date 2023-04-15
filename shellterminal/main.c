@@ -4,10 +4,20 @@
 
 int main(int var, char **argv)
 {
+<<<<<<< HEAD
     
     char *prompt, *lineptr;
     ssize_t input_;
     size_t n = 0;
+=======
+    /*lineptr & lineptr2 will hold user input*/
+    char *prompt, *lineptr;
+    char *lineptr2, *token_t; /*holds a copy of input without delimeters*/
+    ssize_t input_; 
+    size_t n = 0;
+    const char *delim = '\n';
+    int x, tokenval;
+>>>>>>> 9470fdd0c5d428c06c58ddab7a7082a5194d5508
 
     /*print prompt*/
     prompt = "devluanga: ~$";
@@ -21,15 +31,64 @@ int main(int var, char **argv)
 
         input_ = getline(&lineptr, &n, stdin);
 
+<<<<<<< HEAD
         if (input_ == -1)
         {
             printf(" exit..\n");
             /*exit(EXIT_FAILURE);*/
 	    return (-1);
+=======
+        /*dynamic memory allocation*/
+        lineptr2 = malloc(sizeof(char)*input_);
+        if (lineptr2 == NULL)
+        {
+            perror("Memory allocation failed\n");
+            return (-1);            
+        }
+        /*copy user input*/
+        strcpy(lineptr2, lineptr);
+
+        /*get the total tokens use strtok*/
+
+        token_t = strtok(lineptr, delim);
+        
+        while (token_t != NULL)
+        {
+            tokenval++;
+            token_t = strtok(NULL, delim);
+            
+        }
+        tokenval++;
+        /*allocate memory to hold tokens*/
+        argv = malloc(sizeof(char *)*tokenval);
+
+        /*create array to store the tokens*/
+        token_t = strtok(lineptr2, delim);
+        for (x = 0; x != NULL; x++)
+        {
+            argv[x] = malloc(sizeof(char )* strlen(token_t));
+            strcpy(argv[x], token_t);
+
+            token_t = strtok(NULL, delim);
+
+        }
+        argv[x] =NULL;               
+
+        /*check if EOF or getline failed*/
+        if (input_ == -1)
+        {
+            printf("quit..\n");
+            exit(EXIT_FAILURE);
+            return (-1);
+>>>>>>> 9470fdd0c5d428c06c58ddab7a7082a5194d5508
         }
         
         printf("%s\n", lineptr);
         free(lineptr);
     }
     return (0);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 9470fdd0c5d428c06c58ddab7a7082a5194d5508
