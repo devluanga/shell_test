@@ -58,7 +58,7 @@ int main(int var, char **argv)
 
         /*create array to store the tokens*/
         token_t = strtok(lineptr2, delim);
-        for (x = 0; x != NULL; x++)
+        for (x = 0; token_t != NULL; x++)
         {
             argv[x] = malloc(sizeof(char )* strlen(token_t));
             strcpy(argv[x], token_t);
