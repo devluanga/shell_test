@@ -70,7 +70,7 @@ int main(int var, char **argv)
             argv[x] = malloc(sizeof(char )* strlen(token_t));
             strcpy(argv[x], token_t);
 
-            /*printf("%s ", argv[x]); /*check if our array is create*/
+            /*printf("%s ", argv[x]); check if our array is create*/
 
             token_t = strtok(NULL, delim);
 
@@ -84,6 +84,5 @@ int main(int var, char **argv)
     /*free all the allocated memories*/
     free(lineptr);
     free(lineptr2);
-    free(argv);
     return (0);
 }
