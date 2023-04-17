@@ -10,5 +10,6 @@
 #include <string.h>
 #include <errno.h>
 
+void execfile(char **argv);
 
 #endif
