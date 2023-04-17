@@ -9,7 +9,7 @@ int main(int var, char **argv)
     char *lineptr2, *token_t; /*holds a copy of input without delimeters*/
     ssize_t input_; 
     size_t n = 0;
-    const char *delim = '\n';
+    const char *delim = "\n";
     int x, tokenval;
 
     /*print prompt*/
