@@ -40,6 +40,24 @@
         -->built-in commands
         -->Binary executable 
         -->Aliases
+Now that we have been able to create a problem get the user input and even store it in an array,
+we need to use the execute commands ti make sure that thesecommands are properly executed as per user needs.
 
+In this project we are restricted to using execve command only and we'll begin by looking at its man page 
+        man 3 execve
 
+image.png
 
+SYNOPSIS
+       #include <unistd.h>
+
+       int execve(const char *pathname, char *const argv[],
+                  char *const envp[]);
+
+from the above the execve command will need some arguements to be passed
+        pathname
+        argv[]
+        envvp -->environment arguements
+    >>environment variables
+        these are all the commands created and maintained at the OS level.
+        inside these variables we have path variables that make it possible for execve to execute commands given to it.
