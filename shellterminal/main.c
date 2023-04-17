@@ -5,8 +5,8 @@
 int main(int var, char **argv)
 {
     /*lineptr & lineptr2 will hold user input*/
-    char *prompt, *lineptr;
-    char *lineptr2, *token_t; /*holds a copy of input without delimeters*/
+    char *prompt, *lineptr = NULL;
+    char *lineptr2 = NULL, *token_t; /*holds a copy of input without delimeters*/
     ssize_t input_; 
     size_t n = 0;
     const char *delim = "\n";
@@ -17,11 +17,10 @@ int main(int var, char **argv)
 
     (void)var;
 
+    /*creating an infinite loop for prompt input*/
     while (1)
     {
-        /* */
         printf("%s", prompt);
-
         input_ = getline(&lineptr, &n, stdin);
 
         /*check if EOF or getline failed*/
@@ -42,7 +41,11 @@ int main(int var, char **argv)
         /*copy user input*/
         strcpy(lineptr2, lineptr);
 
-        /*get the total tokens use strtok*/
+        /**
+         *needs to split the input string to an array of chars
+         *get the total tokens use strtok
+         *use strtok function to get tokens
+         */
 
         token_t = strtok(lineptr, delim);
         
@@ -53,34 +56,31 @@ int main(int var, char **argv)
             
         }
         tokenval++;
-        /*allocate memory to hold tokens*/
-        argv = malloc(sizeof(char *)*tokenval);
 
-        /*create array to store the tokens*/
+        /*
+         *allocate memory to hold tokens
+         *use strtok to get tokens (tokenization)
+         *then store the tokens in an array
+         */
+        argv = malloc(sizeof(char *)*tokenval);
         token_t = strtok(lineptr2, delim);
+
         for (x = 0; token_t != NULL; x++)
         {
             argv[x] = malloc(sizeof(char )* strlen(token_t));
             strcpy(argv[x], token_t);
 
+            /*printf("%s ", argv[x]); /*check if our array is create*/
+
             token_t = strtok(NULL, delim);
 
         }
-        argv[x] =NULL;               
-
-        /*test on our array*/
-
-        for (int i = 0; i < tokenval-1; i++)
-        {
-            printf("%s ", argv[x]);
-            return (0);
-        }
-        
+        argv[x] =NULL;        
                 
         printf("%s\n", lineptr);
+
+        /*free all the allocated memories*/
         free(lineptr);
-
-
         free(lineptr2);
         free(argv);
     }

@@ -61,3 +61,6 @@ from the above the execve command will need some arguements to be passed
     >>environment variables
         these are all the commands created and maintained at the OS level.
         inside these variables we have path variables that make it possible for execve to execute commands given to it.
+    >so I will create another file to handle command execution
+        execfile.c
+        
