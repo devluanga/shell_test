@@ -75,14 +75,15 @@ int main(int var, char **argv)
             token_t = strtok(NULL, delim);
 
         }
-        argv[x] =NULL;        
-                
-        printf("%s\n", lineptr);
+        argv[x] =NULL;
 
-        /*free all the allocated memories*/
-        free(lineptr);
-        free(lineptr2);
-        free(argv);
+        /*call the execve function*/
+        execfile(argv);        
     }
+
+    /*free all the allocated memories*/
+    free(lineptr);
+    free(lineptr2);
+    free(argv);
     return (0);
 }
