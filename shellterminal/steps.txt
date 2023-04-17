@@ -36,3 +36,10 @@
                 argv[x] = NULL;
 
 
+##Implementing the execve functionality of the imput
+        -->built-in commands
+        -->Binary executable 
+        -->Aliases
+
+
+
