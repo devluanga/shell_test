@@ -78,11 +78,14 @@ int main(int var, char **argv)
         argv[x] =NULL;
 
         /*call the execve function*/
-        execfile(argv);        
+        execfile(argv);   
+        free(argv);
+        free(lineptr2);
+        free(lineptr);     
     }
 
     /*free all the allocated memories*/
-    free(lineptr);
-    free(lineptr2);
+    /*free(lineptr2);*/
+    /*free(lineptr);*/
     return (0);
 }
