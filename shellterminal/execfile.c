@@ -10,7 +10,7 @@ void execfile(char **argv)
         /*we need to implement filepath in this file*/
         comloc = filepath(command); /*comloc holds the return value of filepath*/
 
-        if (execve(command, argv, NULL) == -1)
+        if (execve(comloc, argv, NULL) == -1)
         {
             perror("failed:error!!\n");
         }

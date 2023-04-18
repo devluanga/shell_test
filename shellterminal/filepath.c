@@ -2,7 +2,7 @@
 
 char *filepath(char *command)
 {
-    char *path, cpath, ptokens, fpath; /*two variables will hold the path for the given command*/
+    char *path, *cpath, *ptokens, *fpath; /*two variables will hold the path for the given command*/
     struct stat bufsize;
     int clength, dirl;
 
