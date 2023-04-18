@@ -80,8 +80,8 @@ int main(int var, char **argv)
         /*call the execve function*/
         execfile(argv);   
         free(argv);
-        free(lineptr2);
-        free(lineptr);     
+        /*free(lineptr2);*/
+        /*free(lineptr);     */
     }
 
     /*free all the allocated memories*/
