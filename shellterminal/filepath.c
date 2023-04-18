@@ -22,7 +22,7 @@ char *filepath(char *command)
 
             strcpy(fpath, ptokens);
             strcat(fpath, "/");
-            strcat(fpath, '\0');
+            strcat(fpath, "\0");
             strcat(fpath, command);
 
             if (stat(fpath, &bufsize) == 0)
