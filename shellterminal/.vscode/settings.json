@@ -36,6 +36,7 @@
   "C_Cpp_Runner.useAddressSanitizer": false,
   "files.associations": {
     "stdlib.h": "c",
-    "string.h": "c"
+    "string.h": "c",
+    "stdio.h": "c"
   }
 }

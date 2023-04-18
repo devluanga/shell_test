@@ -63,4 +63,14 @@ from the above the execve command will need some arguements to be passed
         inside these variables we have path variables that make it possible for execve to execute commands given to it.
     >so I will create another file to handle command execution
         execfile.c
-        
+
+##Configuring the path for commands
+-->> we'll create a file to configure the path for each command the user gives to our terminal
+            filepath.c
+-->>we then use the command getenv function to get the environment for the path
+-->Now to get the path each given command;
+        1.get the length of the command
+            clength = strlen(command)
+        2.break the loop the path into tokens
+            ctokens = strtok(cpath, ":");
+        3.create a loop to ensure we append (/) followed by the command, then a terminating null character(\0)
