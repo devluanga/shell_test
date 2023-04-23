@@ -1,5 +1,10 @@
 #include "main.h"
 
+void help_all(void);
+void help_alias(void);
+void help_cd(void);
+void help_exit(void);
+void help_help(void);
 
 /**
  * help_all - Displays all possible builtin shellby commands.

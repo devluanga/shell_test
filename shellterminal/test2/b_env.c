@@ -5,6 +5,10 @@
 
 #include "main.h"
 
+int shellby_env(char **args, char __attribute__((__unused__)) **front);
+int shellby_setenv(char **args, char __attribute__((__unused__)) **front);
+int shellby_unsetenv(char **args, char __attribute__((__unused__)) **front);
+
 /**
  * shellby_env - Prints the current environment.
  * @args: An array of arguments passed to the shell.
