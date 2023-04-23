@@ -1,5 +1,5 @@
 /*Handles all errors from user actions*/
-#include "shell.h"
+#include "main.h"
 
 char *error_126(char **args);
 char *error_127(char **args);
