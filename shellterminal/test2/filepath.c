@@ -1,7 +1,5 @@
 #include "main.h"
 
-char *fill_path_dir(char *path);
-list_t *get_path_dir(char *path);
 
 /**
  * get_location - Locates a command in the PATH.

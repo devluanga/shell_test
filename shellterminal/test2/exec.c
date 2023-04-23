@@ -1,11 +1,5 @@
 #include "main.h"
 
-char *get_args(char *line, int *exe_ret);
-int call_args(char **args, char **front, int *exe_ret);
-int run_args(char **args, char **front, int *exe_ret);
-int handle_args(int *exe_ret);
-int check_args(char **args);
-
 /**
  * get_args - Gets a command from standard input.
  * @line: A buffer to store the command.

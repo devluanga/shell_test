@@ -1,10 +1,5 @@
 #include "main.h"
 
-char *error_env(char **args);
-char *error_1(char **args);
-char *error_2_exit(char **args);
-char *error_2_cd(char **args);
-char *error_2_syntax(char **args);
 /**
  * error_env - Creates an error message for shellby_env errors.
  * @args: An array of arguments passed to the command.
